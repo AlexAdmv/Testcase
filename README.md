@@ -4,7 +4,7 @@
 
 Requires Vagrant, VirtualBox and 2GB free RAM
 
-### VirtualBox 5.2.x is not supported for Vagrant 2.0.0! (Guest Additions problem)  
+### VirtualBox 5.2.x is not supported for Vagrant 2.0.0, need 2.0.1 update! (Guest Additions problem)  
 Install *once* a Vagrant plugin which automatically installs the host's VirtualBox Guest Additions on the guest system.
 ```bash
 $ vagrant plugin install vagrant-vbguest
