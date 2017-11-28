@@ -1,0 +1,19 @@
+---
+- name: Install yum packages using a list
+  yum:
+    name: 
+      - initscripts
+      - fontconfig
+      - urw-fonts
+    state: present  
+      
+- name: install the grafana rpm from a remote repo
+  yum:
+    name: https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-4.6.2-1.x86_64.rpm
+    state: present
+
+- name: Start the Grafana service
+  systemd: 
+    name: grafana-server 
+    state: started
+    enabled: yes

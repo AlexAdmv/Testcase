@@ -1,0 +1,21 @@
+---
+- name: install the latest version of epel
+  yum: 
+    name: epel-release 
+    state: present
+
+- name: install the latest version of collectd
+  yum: 
+    name: collectd 
+    state: present
+  
+- name: install the latest version of collectd-nginx
+  yum: 
+    name: collectd-nginx
+    state: present  
+
+- name: start collectd service
+  systemd: 
+    name: collectd 
+    state: started 
+    enabled: yes

@@ -1,0 +1,6 @@
+---
+- name: Create database
+  command: influx -execute "CREATE DATABASE grafana"
+  
+- name: Create InfluxDB user
+  command: influx -execute "CREATE USER grafana WITH PASSWORD 'grafana' WITH ALL PRIVILEGES"

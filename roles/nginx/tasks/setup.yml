@@ -1,0 +1,40 @@
+---
+- name: copy nginx config to remote dir    
+  copy: 
+    src: nginx.conf
+    dest: /etc/nginx/  
+  notify: restart nginx 
+
+- name: copy nginx monitoring config to remote dir    
+  copy: 
+    src: grafana_nginx.conf
+    dest: /etc/nginx/conf.d/
+  when: "'monitoring' in group_names"  
+  notify: restart nginx
+
+- name: create dir for html
+  file:
+    path: /usr/share/nginx/test.com/html/
+    state: directory
+    mode: 0755
+  when: "'apps' in group_names"
+  
+- name: copy sites remote dir    
+  copy: 
+    src: index.html
+    dest: /usr/share/nginx/test.com/html/
+  when: "'apps' in group_names"  
+  notify: restart nginx  
+
+- name: copy nginx app config to remote dir    
+  copy: 
+    src: apps_nginx.conf
+    dest: /etc/nginx/conf.d/
+  when: "'apps' in group_names"  
+  notify: restart nginx  
+ 
+- name: Start the nginx service
+  systemd: 
+    name: nginx 
+    state: started
+    enabled: yes

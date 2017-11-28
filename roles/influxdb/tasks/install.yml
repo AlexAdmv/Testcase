@@ -1,0 +1,5 @@
+---
+- name: install the influxdb rpm from a remote repo
+  yum:
+    name: https://dl.influxdata.com/influxdb/releases/influxdb-1.4.2.x86_64.rpm
+    state: present

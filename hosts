@@ -1,0 +1,10 @@
+[all:vars]
+ansible_ssh_pass=vagrant
+ansible_ssh_user=vagrant
+
+[apps]
+192.168.10.5
+192.168.10.7
+
+[monitoring]
+192.168.10.6

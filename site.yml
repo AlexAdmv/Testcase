@@ -1,0 +1,15 @@
+---
+- hosts: apps
+  become: yes
+  roles:
+    - selinux
+    - nginx
+    - collectd
+    
+- hosts: monitoring
+  become: yes
+  roles:
+    - selinux
+    - influxdb
+    - grafana
+    - nginx

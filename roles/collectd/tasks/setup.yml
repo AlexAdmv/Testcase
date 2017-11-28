@@ -1,0 +1,6 @@
+---
+- name: copy config to remote dir    
+  copy: 
+    src: collectd.conf
+    dest: /etc/
+  notify: restart collectd
