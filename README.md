@@ -17,12 +17,12 @@ $ vagrant up
 ## Description
 
 Vagrant create 4 instances with CentOS 7: *app1*, *app2*, *monitoring* and *ansible*.  
-Ansible install on node *ansible* using Vagrant shell provision.  
+Ansible install on node *ansible* using Vagrant shell provisioner.  
 All another provisioning proceed with Ansible.  
 
-* 192.168.10.5 - application node 1  
-* 192.168.10.7 - application node 2  
-* 192.168.10.6 - grafana dashboard  
+* 192.168.10.5 - Application node 1  
+* 192.168.10.7 - Application node 2  
+* 192.168.10.6 - Grafana dashboard  
 
 Deafault Grafana credentials - *admin*/*admin*  
 
